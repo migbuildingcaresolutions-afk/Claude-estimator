@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Damage Restoration CRM & Project Management - San Diego CA</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #f59e0b;
+            --accent-color: #10b981;
+            --danger-color: #ef4444;
+            --dark-color: #1f2937;
+            --light-color: #f8fafc;
+            --gray-color: #6b7280;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            --shadow: 0 10px 25px rgba(0,0,0,0.1);
+            --border-radius: 12px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: var(--gradient);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-success {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .btn-danger {
+            background: var(--danger-color);
+            color: white;
+        }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            height: calc(100vh - 120px);
+        }
+
+        .sidebar {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .nav-item {
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .main-content {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            overflow-y: auto;
+        }
+
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f3f4f6;
+        }
+
+        .content-header h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--gradient);
+            color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .form-section {
+            background: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .form-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .table-container {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table th,
+        .table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .table th {
+            background: #f9fafb;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .table tbody tr:hover {
+            background: #f9fafb;
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-new {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .status-in-progress {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .status-completed {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-cancelled {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90%;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .modal-header h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray-color);
+        }
+
+        .emergency-alert {
+            background: var(--danger-color);
+            color: white;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .client-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .client-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .client-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .client-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .client-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            color: var(--gray-color);
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            background: white;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .quick-action {
+            background: var(--gradient);
+            color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .quick-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            color: white;
+        }
+
+        .quick-action i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 1024px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            
+            .sidebar {
+                order: 2;
+            }
+            
+            .main-content {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .header-content {
+                padding: 0 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .quick-actions {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .priority-high {
+            border-left: 4px solid var(--danger-color);
+        }
+
+        .priority-medium {
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .priority-low {
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .notes-section {
+            background: #f9fafb;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .note-item {
+            background: white;
+            border-radius: 6px;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .note-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--gray-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .estimate-summary {
+            background: #f0f9ff;
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .estimate-total {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>🚨 Water Damage Restoration CRM</h1>
+            <div class="header-actions">
+                <span id="currentDateTime"></span>
+                <button class="btn btn-secondary" onclick="exportData()">
+                    <i class="fas fa-download"></i> Export Data
+                </button>
+                <button class="btn btn-success" onclick="showNewProjectModal()">
+                    <i class="fas fa-plus"></i> New Project
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="dashboard">
+            <div class="sidebar">
+                <nav>
+                    <div class="nav-item active" onclick="showSection('dashboard')">
+                        <i class="fas fa-chart-dashboard"></i> Dashboard
+                    </div>
+                    <div class="nav-item" onclick="showSection('projects')">
+                        <i class="fas fa-tasks"></i> Projects
+                    </div>
+                    <div class="nav-item" onclick="showSection('clients')">
+                        <i class="fas fa-users"></i> Clients
+                    </div>
+                    <div class="nav-item" onclick="showSection('estimates')">
+                        <i class="fas fa-calculator"></i> Estimates
+                    </div>
+                    <div class="nav-item" onclick="showSection('calendar')">
+                        <i class="fas fa-calendar"></i> Schedule
+                    </div>
+                    <div class="nav-item" onclick="showSection('reports')">
+                        <i class="fas fa-chart-line"></i> Reports
+                    </div>
+                </nav>
+
+                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e5e7eb;">
+                    <h4 style="margin-bottom: 1rem; color: var(--primary-color);">Emergency Contacts</h4>
+                    <div style="font-size: 0.9rem; color: var(--gray-color);">
+                        <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> emergency@buildcare.com</p>
+                        <p><i class="fas fa-clock"></i> 24/7 Available</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <!-- Dashboard Section -->
+                <div id="dashboard" class="content-section active">
+                    <div class="content-header">
+                        <h2>Dashboard Overview</h2>
+                        <div>
+                            <button class="btn btn-primary" onclick="showNewProjectModal()">
+                                <i class="fas fa-plus"></i> Emergency Project
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number" id="activeProjects">0</div>
+                            <div class="stat-label">Active Projects</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="totalClients">0</div>
+                            <div class="stat-label">Total Clients</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="monthlyRevenue">$0</div>
+                            <div class="stat-label">Monthly Revenue</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="avgJobValue">$0</div>
+                            <div class="stat-label">Average Job Value</div>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <div class="quick-action" onclick="showNewProjectModal()">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h3>New Emergency</h3>
+                            <p>Start water damage project</p>
+                        </div>
+                        <div class="quick-action" onclick="openEstimator()">
+                            <i class="fas fa-calculator"></i>
+                            <h3>Create Estimate</h3>
+                            <p>Generate pricing quote</p>
+                        </div>
+                        <div class="quick-action" onclick="showSection('clients')">
+                            <i class="fas fa-user-plus"></i>
+                            <h3>Add Client</h3>
+                            <p>New customer information</p>
+                        </div>
+                        <div class="quick-action" onclick="showSection('calendar')">
+                            <i class="fas fa-calendar-plus"></i>
+                            <h3>Schedule Service</h3>
+                            <p>Book appointment</p>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <h3 style="padding: 1rem; background: #f9fafb; margin: 0; color: var(--primary-color);">
+                            Recent Projects
+                        </h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Project #</th>
+                                    <th>Client</th>
+                                    <th>Address</th>
+                                    <th>Type</th>
+                                    <th>Status</th>
+                                    <th>Value</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentProjectsTable">
+                                <tr>
+                                    <td colspan="7" style="text-align: center; padding: 2rem; color: var(--gray-color);">
+                                        No projects yet. Create your first project!
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Projects Section -->
+                <div id="projects" class="content-section">
+                    <div class="content-header">
+                        <h2>Project Management</h2>
+                        <button class="btn btn-success" onclick="showNewProjectModal()">
+                            <i class="fas fa-plus"></i> New Project
+                        </button>
+                    </div>
+
+                    <input type="text" class="search-box" placeholder="Search projects..." id="projectSearch">
+
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Project #</th>
+                                    <th>Client</th>
+                                    <th>Property Address</th>
+                                    <th>Damage Type</th>
+                                    <th>Priority</th>
+                                    <th>Status</th>
+                                    <th>Estimate</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="projectsTable">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Clients Section -->
+                <div id="clients" class="content-section">
+                    <div class="content-header">
+                        <h2>Client Management</h2>
+                        <button class="btn btn-success" onclick="showNewClientModal()">
+                            <i class="fas fa-user-plus"></i> Add Client
+                        </button>
+                    </div>
+
+                    <input type="text" class="search-box" placeholder="Search clients..." id="clientSearch">
+
+                    <div id="clientsList">
+                    </div>
+                </div>
+
+                <!-- Other sections would be implemented similarly -->
+                <div id="estimates" class="content-section">
+                    <div class="content-header">
+                        <h2>Estimates & Quotes</h2>
+                        <button class="btn btn-primary" onclick="openEstimator()">
+                            <i class="fas fa-calculator"></i> Create Estimate
+                        </button>
+                    </div>
+                    <p>Estimate management will be displayed here...</p>
+                </div>
+
+                <div id="calendar" class="content-section">
+                    <div class="content-header">
+                        <h2>Schedule & Calendar</h2>
+                    </div>
+                    <p>Calendar and scheduling will be displayed here...</p>
+                </div>
+
+                <div id="reports" class="content-section">
+                    <div class="content-header">
+                        <h2>Reports & Analytics</h2>
+                    </div>
+                    <p>Reports and analytics will be displayed here...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Project Modal -->
+    <div id="newProjectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-exclamation-triangle"></i> New Water Damage Project</h3>
+                <button class="close" onclick="closeModal('newProjectModal')">&times;</button>
+            </div>
+
+            <div class="emergency-alert">
+                <strong>🚨 EMERGENCY PROJECT</strong><br>
+                Immediate response required for water damage situation
+            </div>
+
+            <form id="newProjectForm">
+                <div class="form-grid">
+                    <!-- Client Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-user"></i> Client Information</h3>
+                        
+                        <div class="form-group">
+                            <label for="clientSelect">Existing Client</label>
+                            <select id="clientSelect" onchange="fillClientInfo()">
+                                <option value="">Select existing client or create new</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="clientName">Full Name *</label>
+                            <input type="text" id="clientName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="clientPhone">Phone Number *</label>
+                            <input type="tel" id="clientPhone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="clientEmail">Email Address</label>
+                            <input type="email" id="clientEmail">
+                        </div>
+                    </div>
+
+                    <!-- Property Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-home"></i> Property Details</h3>
+                        
+                        <div class="form-group">
+                            <label for="propertyAddress">Property Address *</label>
+                            <textarea id="propertyAddress" rows="3" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="propertyType">Property Type</label>
+                            <select id="propertyType" required>
+                                <option value="">Select Property Type</option>
+                                <option value="residential-house">Residential House</option>
+                                <option value="residential-condo">Condo/Townhouse</option>
+                                <option value="apartment">Apartment</option>
+                                <option value="commercial-office">Commercial Office</option>
+                                <option value="commercial-retail">Commercial Retail</option>
+                                <option value="industrial">Industrial</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="affectedArea">Affected Area (sq ft)</label>
+                            <input type="number" id="affectedArea" min="1">
+                        </div>
+                    </div>
+
+                    <!-- Damage Assessment -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-tint"></i> Damage Assessment</h3>
+                        
+                        <div class="form-group">
+                            <label for="damageSource">Source of Water Damage</label>
+                            <select id="damageSource">
+                                <option value="">Select Source</option>
+                                <option value="burst-pipe">Burst Pipe</option>
+                                <option value="appliance-leak">Appliance Leak</option>
+                                <option value="roof-leak">Roof Leak</option>
+                                <option value="flooding">Flooding</option>
+                                <option value="sewage-backup">Sewage Backup</option>
+                                <option value="storm-damage">Storm Damage</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="waterCategory">Water Category</label>
+                            <select id="waterCategory">
+                                <option value="clean">Category 1 - Clean Water</option>
+                                <option value="gray">Category 2 - Gray Water</option>
+                                <option value="black">Category 3 - Black Water</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="urgencyLevel">Urgency Level</label>
+                            <select id="urgencyLevel" required>
+                                <option value="emergency">🚨 Emergency (Immediate)</option>
+                                <option value="urgent">⚠️ Urgent (Within 24h)</option>
+                                <option value="standard">📅 Standard (Within 48h)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="damageDescription">Damage Description</label>
+                            <textarea id="damageDescription" rows="4" placeholder="Describe the extent of damage, affected rooms, materials, etc."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Project Details -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-clipboard-list"></i> Project Details</h3>
+                        
+                        <div class="form-group">
+                            <label for="insuranceProvider">Insurance Company</label>
+                            <input type="text" id="insuranceProvider" placeholder="e.g., State Farm, Allstate">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="claimNumber">Claim Number</label>
+                            <input type="text" id="claimNumber">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="preferredStartDate">Preferred Start Date</label>
+                            <input type="datetime-local" id="preferredStartDate">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="specialInstructions">Special Instructions</label>
+                            <textarea id="specialInstructions" rows="3" placeholder="Access codes, pet information, special requirements..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; text-align: center;">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('newProjectModal')">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn btn-success" style="margin-left: 1rem;">
+                        <i class="fas fa-save"></i> Create Project
+                    </button>
+                    <button type="button" class="btn btn-primary" onclick="createAndEstimate()" style="margin-left: 1rem;">
+                        <i class="fas fa-calculator"></i> Create & Estimate
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- New Client Modal -->
+    <div id="newClientModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-user-plus"></i> Add New Client</h3>
+                <button class="close" onclick="closeModal('newClientModal')">&times;</button>
+            </div>
+
+            <form id="newClientForm">
+                <div class="form-grid">
+                    <div class="form-section">
+                        <h3><i class="fas fa-user"></i> Personal Information</h3>
+                        
+                        <div class="form-group">
+                            <label for="newClientName">Full Name *</label>
+                            <input type="text" id="newClientName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="newClientPhone">Phone Number *</label>
+                            <input type="tel" id="newClientPhone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="newClientEmail">Email Address</label>
+                            <input type="email" id="newClientEmail">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="newClientType">Client Type</label>
+                            <select id="newClientType">
+                                <option value="residential">Residential</option>
+                                <option value="commercial">Commercial</option>
+                                <option value="property-manager">Property Manager</option>
+                                <option value="insurance">Insurance Company</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-map-marker-alt"></i> Address Information</h3>
+                        
+                        <div class="form-group">
+                            <label for="newClientAddress">Primary Address</label>
+                            <textarea id="newClientAddress" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="newClientCity">City</label>
+                            <input type="text" id="newClientCity">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="newClientZip">ZIP Code</label>
+                            <input type="text" id="newClientZip">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="newClientNotes">Notes</label>
+                            <textarea id="newClientNotes" rows="3" placeholder="Emergency contacts, special instructions, etc."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; text-align: center;">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('newClientModal')">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn btn-success" style="margin-left: 1rem;">
+                        <i class="fas fa-save"></i> Add Client
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Project Details Modal -->
+    <div id="projectDetailsModal" class="modal">
+        <div class="modal-content" style="max-width: 1000px;">
+            <div class="modal-header">
+                <h3 id="projectDetailsTitle">Project Details</h3>
+                <button class="close" onclick="closeModal('projectDetailsModal')">&times;</button>
+            </div>
+            
+            <div id="projectDetailsContent">
+                <!-- Content will be dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data Storage - Using localStorage for persistence
+        let projects = JSON.parse(localStorage.getItem('waterDamageProjects')) || [];
+        let clients = JSON.parse(localStorage.getItem('waterDamageClients')) || [];
+        let projectCounter = parseInt(localStorage.getItem('projectCounter')) || 1000;
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+            
+            loadDashboard();
+            loadClients();
+            loadProjects();
+            
+            // Set default date to now for new projects
+            document.getElementById('preferredStartDate').value = new Date().toISOString().slice(0, 16);
+            
+            // Form submissions
+            document.getElementById('newProjectForm').addEventListener('submit', createProject);
+            document.getElementById('newClientForm').addEventListener('submit', createClient);
+            
+            // Search functionality
+            document.getElementById('projectSearch')?.addEventListener('input', filterProjects);
+            document.getElementById('clientSearch')?.addEventListener('input', filterClients);
+        });
+
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'short', 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric',
+                hour: '2-digit', 
+                minute: '2-digit'
+            };
+            document.getElementById('currentDateTime').textContent = now.toLocaleDateString('en-US', options);
+        }
+
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active from nav items
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active to clicked nav item
+            event.target.classList.add('active');
+            
+            // Load section-specific data
+            if (sectionId === 'projects') {
+                loadProjects();
+            } else if (sectionId === 'clients') {
+                loadClients();
+            } else if (sectionId === 'dashboard') {
+                loadDashboard();
+            }
+        }
+
+        function loadDashboard() {
+            // Update stats
+            const activeProjects = projects.filter(p => p.status === 'in-progress' || p.status === 'new').length;
+            const monthlyRevenue = projects
+                .filter(p => new Date(p.createdDate).getMonth() === new Date().getMonth())
+                .reduce((sum, p) => sum + (p.estimatedValue || 0), 0);
+            const avgJobValue = projects.length > 0 ? 
+                projects.reduce((sum, p) => sum + (p.estimatedValue || 0), 0) / projects.length : 0;
+
+            document.getElementById('activeProjects').textContent = activeProjects;
+            document.getElementById('totalClients').textContent = clients.length;
+            document.getElementById('monthlyRevenue').textContent = formatCurrency(monthlyRevenue);
+            document.getElementById('avgJobValue').textContent = formatCurrency(avgJobValue);
+
+            // Load recent projects table
+            loadRecentProjectsTable();
+        }
+
+        function loadRecentProjectsTable() {
+            const tbody = document.getElementById('recentProjectsTable');
+            const recentProjects = projects.slice(-5).reverse();
+            
+            if (recentProjects.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="7" style="text-align: center; padding: 2rem; color: var(--gray-color);">
+                            No projects yet. Create your first project!
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            tbody.innerHTML = recentProjects.map(project => `
+                <tr class="priority-${project.urgencyLevel}">
+                    <td><strong>#${project.id}</strong></td>
+                    <td>${project.clientName}</td>
+                    <td>${truncateText(project.propertyAddress, 30)}</td>
+                    <td>${project.damageSource || 'Not specified'}</td>
+                    <td><span class="status-badge status-${project.status}">${project.status.replace('-', ' ')}</span></td>
+                    <td>${project.estimatedValue ? formatCurrency(project.estimatedValue) : 'TBD'}</td>
+                    <td>
+                        <div class="project-actions">
+                            <button class="btn btn-small btn-primary" onclick="viewProject('${project.id}')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-small btn-secondary" onclick="editProject('${project.id}')">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function loadProjects() {
+            const tbody = document.getElementById('projectsTable');
+            
+            if (projects.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="8" style="text-align: center; padding: 2rem; color: var(--gray-color);">
+                            No projects yet. Create your first project!
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            tbody.innerHTML = projects.map(project => `
+                <tr class="priority-${project.urgencyLevel}">
+                    <td><strong>#${project.id}</strong></td>
+                    <td>${project.clientName}</td>
+                    <td>${truncateText(project.propertyAddress, 40)}</td>
+                    <td>${project.damageSource || 'Not specified'}</td>
+                    <td>
+                        <span class="priority-${project.urgencyLevel}">
+                            ${project.urgencyLevel === 'emergency' ? '🚨' : 
+                              project.urgencyLevel === 'urgent' ? '⚠️' : '📅'} 
+                            ${project.urgencyLevel}
+                        </span>
+                    </td>
+                    <td><span class="status-badge status-${project.status}">${project.status.replace('-', ' ')}</span></td>
+                    <td>${project.estimatedValue ? formatCurrency(project.estimatedValue) : 'TBD'}</td>
+                    <td>
+                        <div class="project-actions">
+                            <button class="btn btn-small btn-primary" onclick="viewProject('${project.id}')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-small btn-secondary" onclick="editProject('${project.id}')">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-small btn-success" onclick="createEstimateForProject('${project.id}')">
+                                <i class="fas fa-calculator"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function loadClients() {
+            const clientsList = document.getElementById('clientsList');
+            const clientSelect = document.getElementById('clientSelect');
+            
+            // Update client select dropdown
+            if (clientSelect) {
+                clientSelect.innerHTML = '<option value="">Select existing client or create new</option>' +
+                    clients.map(client => `
+                        <option value="${client.id}">${client.name} - ${client.phone}</option>
+                    `).join('');
+            }
+            
+            // Update clients list
+            if (clients.length === 0) {
+                clientsList.innerHTML = `
+                    <div style="text-align: center; padding: 3rem; color: var(--gray-color);">
+                        <i class="fas fa-users" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                        <h3>No clients yet</h3>
+                        <p>Add your first client to get started!</p>
+                        <button class="btn btn-success" onclick="showNewClientModal()">
+                            <i class="fas fa-user-plus"></i> Add First Client
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            clientsList.innerHTML = clients.map(client => `
+                <div class="client-card">
+                    <div class="client-header">
+                        <div class="client-name">${client.name}</div>
+                        <div>
+                            <button class="btn btn-small btn-primary" onclick="createProjectForClient('${client.id}')">
+                                <i class="fas fa-plus"></i> New Project
+                            </button>
+                            <button class="btn btn-small btn-secondary" onclick="editClient('${client.id}')">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="client-info">
+                        <div><i class="fas fa-phone"></i> ${client.phone}</div>
+                        <div><i class="fas fa-envelope"></i> ${client.email || 'No email'}</div>
+                        <div><i class="fas fa-map-marker-alt"></i> ${client.city || 'No city'}, ${client.zip || ''}</div>
+                        <div><i class="fas fa-tag"></i> ${client.type}</div>
+                    </div>
+                    ${client.notes ? `<div class="notes-section"><strong>Notes:</strong> ${client.notes}</div>` : ''}
+                </div>
+            `).join('');
+        }
+
+        function showNewProjectModal() {
+            document.getElementById('newProjectModal').style.display = 'block';
+            loadClients(); // Refresh client dropdown
+        }
+
+        function showNewClientModal() {
+            document.getElementById('newClientModal').style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function createProject(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const projectData = {};
+            
+            // Collect form data
+            const fields = [
+                'clientName', 'clientPhone', 'clientEmail', 'propertyAddress', 
+                'propertyType', 'affectedArea', 'damageSource', 'waterCategory', 
+                'urgencyLevel', 'damageDescription', 'insuranceProvider', 
+                'claimNumber', 'preferredStartDate', 'specialInstructions'
+            ];
+            
+            fields.forEach(field => {
+                projectData[field] = document.getElementById(field).value;
+            });
+
+            // Generate project ID
+            const project = {
+                id: projectCounter++,
+                ...projectData,
+                status: 'new',
+                createdDate: new Date().toISOString(),
+                lastUpdated: new Date().toISOString(),
+                notes: [],
+                estimatedValue: null
+            };
+
+            // Save project
+            projects.push(project);
+            saveData();
+
+            // Check if client exists, if not create new one
+            const existingClient = clients.find(c => c.phone === project.clientPhone);
+            if (!existingClient && project.clientName) {
+                const newClient = {
+                    id: generateId(),
+                    name: project.clientName,
+                    phone: project.clientPhone,
+                    email: project.clientEmail || '',
+                    type: 'residential',
+                    address: project.propertyAddress,
+                    createdDate: new Date().toISOString()
+                };
+                clients.push(newClient);
+                saveData();
+            }
+
+            // Show success and refresh
+            alert(`✅ Project #${project.id} created successfully!\n\nUrgency: ${project.urgencyLevel}\nClient: ${project.clientName}`);
+            closeModal('newProjectModal');
+            document.getElementById('newProjectForm').reset();
+            loadDashboard();
+            showSection('projects');
+        }
+
+        function createClient(event) {
+            event.preventDefault();
+            
+            const client = {
+                id: generateId(),
+                name: document.getElementById('newClientName').value,
+                phone: document.getElementById('newClientPhone').value,
+                email: document.getElementById('newClientEmail').value,
+                type: document.getElementById('newClientType').value,
+                address: document.getElementById('newClientAddress').value,
+                city: document.getElementById('newClientCity').value,
+                zip: document.getElementById('newClientZip').value,
+                notes: document.getElementById('newClientNotes').value,
+                createdDate: new Date().toISOString()
+            };
+
+            clients.push(client);
+            saveData();
+            
+            alert(`✅ Client "${client.name}" added successfully!`);
+            closeModal('newClientModal');
+            document.getElementById('newClientForm').reset();
+            loadClients();
+        }
+
+        function createAndEstimate() {
+            // First create the project
+            const form = document.getElementById('newProjectForm');
+            const formData = new FormData(form);
+            
+            // Validate required fields
+            if (!document.getElementById('clientName').value || 
+                !document.getElementById('clientPhone').value || 
+                !document.getElementById('propertyAddress').value) {
+                alert('Please fill in all required fields before creating estimate.');
+                return;
+            }
+            
+            // Create project without form submission
+            const projectData = {};
+            const fields = [
+                'clientName', 'clientPhone', 'clientEmail', 'propertyAddress', 
+                'propertyType', 'affectedArea', 'damageSource', 'waterCategory', 
+                'urgencyLevel', 'damageDescription', 'insuranceProvider', 
+                'claimNumber', 'preferredStartDate', 'specialInstructions'
+            ];
+            
+            fields.forEach(field => {
+                projectData[field] = document.getElementById(field).value;
+            });
+
+            const project = {
+                id: projectCounter++,
+                ...projectData,
+                status: 'new',
+                createdDate: new Date().toISOString(),
+                lastUpdated: new Date().toISOString(),
+                notes: [],
+                estimatedValue: null
+            };
+
+            projects.push(project);
+            saveData();
+            
+            // Close modal and open estimator
+            closeModal('newProjectModal');
+            document.getElementById('newProjectForm').reset();
+            
+            // Store project data for estimator
+            localStorage.setItem('currentProjectForEstimate', JSON.stringify(project));
+            
+            // Open estimator in new window/tab
+            openEstimator();
+        }
+
+        function openEstimator() {
+            // This would open your water damage estimator
+            // For now, we'll show an alert with instructions
+            alert(`🧮 Opening Water Damage Estimator...\n\nThe estimator tool will open with:\n- Pre-filled project data\n- Xactimate pricing for San Diego\n- Professional estimate generation\n\nThis would integrate with your existing estimator tool.`);
+            
+            // In production, you might:
+            // window.open('/water-damage-estimator.html', '_blank');
+            // or integrate the estimator directly into this system
+        }
+
+        function viewProject(projectId) {
+            const project = projects.find(p => p.id == projectId);
+            if (!project) return;
+
+            const content = `
+                <div class="form-grid">
+                    <div class="form-section">
+                        <h3><i class="fas fa-info-circle"></i> Project Information</h3>
+                        <p><strong>Project #:</strong> ${project.id}</p>
+                        <p><strong>Status:</strong> <span class="status-badge status-${project.status}">${project.status.replace('-', ' ')}</span></p>
+                        <p><strong>Created:</strong> ${new Date(project.createdDate).toLocaleDateString()}</p>
+                        <p><strong>Urgency:</strong> ${project.urgencyLevel === 'emergency' ? '🚨' : 
+                                                     project.urgencyLevel === 'urgent' ? '⚠️' : '📅'} ${project.urgencyLevel}</p>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3><i class="fas fa-user"></i> Client Information</h3>
+                        <p><strong>Name:</strong> ${project.clientName}</p>
+                        <p><strong>Phone:</strong> <a href="tel:${project.clientPhone}">${project.clientPhone}</a></p>
+                        <p><strong>Email:</strong> ${project.clientEmail ? `<a href="mailto:${project.clientEmail}">${project.clientEmail}</a>` : 'Not provided'}</p>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3><i class="fas fa-home"></i> Property Details</h3>
+                        <p><strong>Address:</strong> ${project.propertyAddress}</p>
+                        <p><strong>Type:</strong> ${project.propertyType}</p>
+                        <p><strong>Affected Area:</strong> ${project.affectedArea ? project.affectedArea + ' sq ft' : 'TBD'}</p>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3><i class="fas fa-tint"></i> Damage Information</h3>
+                        <p><strong>Source:</strong> ${project.damageSource || 'Not specified'}</p>
+                        <p><strong>Water Category:</strong> ${project.waterCategory || 'TBD'}</p>
+                        <p><strong>Description:</strong> ${project.damageDescription || 'No description provided'}</p>
+                    </div>
+                </div>
+                
+                ${project.estimatedValue ? `
+                    <div class="estimate-summary">
+                        <h3><i class="fas fa-calculator"></i> Estimate Summary</h3>
+                        <div class="estimate-total">${formatCurrency(project.estimatedValue)}</div>
+                    </div>
+                ` : ''}
+                
+                <div class="notes-section" style="margin-top: 2rem;">
+                    <h3><i class="fas fa-sticky-note"></i> Project Notes</h3>
+                    <div id="projectNotes">
+                        ${project.notes && project.notes.length > 0 ? 
+                            project.notes.map(note => `
+                                <div class="note-item">
+                                    <div class="note-header">
+                                        <span>${new Date(note.date).toLocaleString()}</span>
+                                        <span>by ${note.author}</span>
+                                    </div>
+                                    <p>${note.content}</p>
+                                </div>
+                            `).join('') : 
+                            '<p style="color: var(--gray-color);">No notes added yet.</p>'
+                        }
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <textarea id="newNote" placeholder="Add a note..." rows="3" style="width: 100%; margin-bottom: 1rem;"></textarea>
+                        <button class="btn btn-primary" onclick="addProjectNote('${project.id}')">
+                            <i class="fas fa-plus"></i> Add Note
+                        </button>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e5e7eb;">
+                    <button class="btn btn-success" onclick="createEstimateForProject('${project.id}')">
+                        <i class="fas fa-calculator"></i> Create Estimate
+                    </button>
+                    <button class="btn btn-primary" onclick="updateProjectStatus('${project.id}')" style="margin-left: 1rem;">
+                        <i class="fas fa-edit"></i> Update Status
+                    </button>
+                    <button class="btn btn-secondary" onclick="generateProjectReport('${project.id}')" style="margin-left: 1rem;">
+                        <i class="fas fa-file-pdf"></i> Generate Report
+                    </button>
+                </div>
+            `;
+
+            document.getElementById('projectDetailsTitle').innerHTML = `<i class="fas fa-clipboard-list"></i> Project #${project.id} - ${project.clientName}`;
+            document.getElementById('projectDetailsContent').innerHTML = content;
+            document.getElementById('projectDetailsModal').style.display = 'block';
+        }
+
+        function addProjectNote(projectId) {
+            const noteContent = document.getElementById('newNote').value.trim();
+            if (!noteContent) return;
+
+            const project = projects.find(p => p.id == projectId);
+            if (!project) return;
+
+            if (!project.notes) project.notes = [];
+
+            project.notes.push({
+                id: generateId(),
+                content: noteContent,
+                date: new Date().toISOString(),
+                author: 'Admin' // In a real app, this would be the current user
+            });
+
+            project.lastUpdated = new Date().toISOString();
+            saveData();
+
+            // Refresh the project view
+            viewProject(projectId);
+            alert('✅ Note added successfully!');
+        }
+
+        function createEstimateForProject(projectId) {
+            const project = projects.find(p => p.id == projectId);
+            if (!project) return;
+
+            // Store project data for estimator
+            localStorage.setItem('currentProjectForEstimate', JSON.stringify(project));
+            openEstimator();
+        }
+
+        function fillClientInfo() {
+            const clientId = document.getElementById('clientSelect').value;
+            if (!clientId) return;
+
+            const client = clients.find(c => c.id === clientId);
+            if (!client) return;
+
+            document.getElementById('clientName').value = client.name;
+            document.getElementById('clientPhone').value = client.phone;
+            document.getElementById('clientEmail').value = client.email || '';
+        }
+
+        function createProjectForClient(clientId) {
+            const client = clients.find(c => c.id === clientId);
+            if (!client) return;
+
+            showNewProjectModal();
+            
+            // Pre-fill client information
+            setTimeout(() => {
+                document.getElementById('clientName').value = client.name;
+                document.getElementById('clientPhone').value = client.phone;
+                document.getElementById('clientEmail').value = client.email || '';
+                if (client.address) {
+                    document.getElementById('propertyAddress').value = client.address;
+                }
+            }, 100);
+        }
+
+        // Utility functions
+        function saveData() {
+            localStorage.setItem('waterDamageProjects', JSON.stringify(projects));
+            localStorage.setItem('waterDamageClients', JSON.stringify(clients));
+            localStorage.setItem('projectCounter', projectCounter.toString());
+        }
+
+        function generateId() {
+            return 'client_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        }
+
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            }).format(amount || 0);
+        }
+
+        function truncateText(text, maxLength) {
+            if (!text) return '';
+            return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+        }
+
+        function filterProjects() {
+            const searchTerm = document.getElementById('projectSearch').value.toLowerCase();
+            const rows = document.querySelectorAll('#projectsTable tr');
+            
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        }
+
+        function filterClients() {
+            const searchTerm = document.getElementById('clientSearch').value.toLowerCase();
+            const cards = document.querySelectorAll('.client-card');
+            
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                card.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        }
+
+        function exportData() {
+            const exportData = {
+                projects: projects,
+                clients: clients,
+                exportDate: new Date().toISOString(),
+                version: '1.0'
+            };
+
+            const dataStr = JSON.stringify(exportData, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `water-damage-crm-export-${new Date().toISOString().split('T')[0]}.json`;
+            link.click();
+            
+            URL.revokeObjectURL(url);
+            alert('📁 Data exported successfully!\nFile saved to your computer.');
+        }
+
+        // Click outside modal to close
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
